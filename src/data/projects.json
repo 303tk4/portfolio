@@ -1,5 +1,40 @@
 [
   {
+    "id": "Kimagure-AudiobookPlayer",
+    "title": {
+      "ja": "きまぐれオーディオブックプレイヤー Kimagure-AudiobookPlayer",
+      "en": "Kimagure-AudiobookPlayer",
+      "zh-TW": "隨興有聲書播放器 Kimagure-AudiobookPlayer"
+    },
+    "tagline": {
+      "ja": "途中まで聴いていた複数のオーディオブックを、ワンタップで選んで即再生できる。忙しい人や移り気な人向けのプレイヤー",
+      "en": "Resume any of your in-progress audiobooks with a single tap. Built for busy or mood-driven listeners juggling multiple titles.",
+      "zh-TW": "只需單鍵點擊即可從上次中斷處立即續聽多本有聲書。專為忙碌或喜歡隨心情切換書籍的聽眾打造。"
+    },
+    "description": {
+      "ja": "5時間集中してオーディオブックを聴ける人は多くありません。途中でやめたあと、別の本を再生したくなったとき・そしてまた戻りたいときは、本棚に戻って選びなおす手間がかかります。いっぽうこのプレイヤーは、4本同時並行で聴くことを前提に、ワンタップでどれでも一発再生できる再生画面を備えています。小説とビジネス書を、両方少しずつ読み進める、ということも可能です。",
+      "en": "Few people can focus on a single audiobook for five hours straight. Switching to another book midway—and jumping back later—usually forces tedious trips back to the library shelf. Designed around listening to up to four titles in parallel, this player puts all four slots directly on the playback screen for instant one-tap switching, making it effortless to progress through novels and business books side by side.",
+      "zh-TW": "很少人能一口氣專注聽完五小時的有聲書。中途想換聽另一本書、過陣子又想切回來時，往往得回到書櫃重新挑選。這款播放器以同時並行聆聽 4 本書為前提，在播放畫面直接提供單鍵切換即時續播，讓小說與商業書都能輕鬆齊頭並進。"
+    },
+    "highlights": {
+      "ja": [
+        "VS Code上からClaude Codeで製作、エミュレーションなどでAndroid Studioを使用。開発中"
+      ],
+      "en": [
+        "Developed with Claude Code inside VS Code alongside Android Studio for device emulation and testing (In Development)."
+      ],
+      "zh-TW": [
+        "透過 VS Code 中的 Claude Code 進行開發，並搭配 Android Studio 進行模擬器測試（開發中）。"
+      ]
+    },
+    "image": "/images/kimagure-audiobookplayer.jpg",
+    "tags": ["Android", "Mobile"],
+    "demoUrl": "",
+    "githubUrl": "",
+    "status": "In Development",
+    "featured": true
+  },
+  {
     "id": "map-demand-analyzer",
     "title": {
       "ja": "業態別・需要と空白地帯の分析マップ（地域は日本・台湾に対応）",
@@ -69,47 +104,6 @@
     "demoUrl": "https://tc-vocab.fromzeropoint.com/",
     "githubUrl": "https://github.com/303tk4/tc-vocab",
     "status": "Live",
-    "featured": true
-  },
-  {
-    "id": "edge-pulse",
-    "title": {
-      "ja": "EdgePulse（開発中）",
-      "en": "EdgePulse (In Development)",
-      "zh-TW": "EdgePulse（開發中）"
-    },
-    "tagline": {
-      "ja": "Cloudflare Workers ベースの超軽量エンドポイント死活監視・レイテンシ可視化基盤",
-      "en": "Ultra-lightweight endpoint uptime monitoring and latency visualization built on Cloudflare Workers.",
-      "zh-TW": "基於 Cloudflare Workers 的超輕量端點存活監控與延遲視覺化平台。"
-    },
-    "description": {
-      "ja": "個人開発で運用している API や Webhook の稼働状況を、グローバルエッジから定期チェックして異常時に通知する監視ダッシュボードです。現在は通知連携と D1 への履歴集計バッチの最終調整を進めており、まもなくベータ公開予定です。",
-      "en": "A monitoring dashboard that checks personal APIs and webhooks periodically from global edge locations and sends alerts on downtime. Currently finalizing notification integrations and D1 history aggregation batches ahead of beta release.",
-      "zh-TW": "針對個人開發維運的 API 與 Webhook，從全球邊緣節點定期檢查運作狀態並在異常時發送通知的監控儀表板。目前正在進行通知串接與 D1 歷史統計批次的最後調整，預計近期開放 Beta 版。"
-    },
-    "highlights": {
-      "ja": [
-        "Cloudflare Workers Cron Triggers を利用した低コスト・マルチリージョン監視",
-        "Hono + D1 によるシンプルで型安全な API 設計とレスポンスタイム分布の集計",
-        "Slack / Discord Webhook へのしきい値ベースアラート通知と復旧検知"
-      ],
-      "en": [
-        "Low-cost multi-region monitoring powered by Cloudflare Workers Cron Triggers",
-        "Type-safe API with Hono + D1 and response-time distribution aggregation",
-        "Threshold-based Slack / Discord webhook alerts and automatic recovery detection"
-      ],
-      "zh-TW": [
-        "運用 Cloudflare Workers Cron Triggers 實現低成本多區域監控",
-        "透過 Hono + D1 打造簡潔且型別安全的 API 並統計回應時間分布",
-        "支援 Slack / Discord Webhook 閾值告警通知與自動恢復偵測"
-      ]
-    },
-    "image": "/images/edge-pulse-preview.png",
-    "tags": ["Cloudflare Workers", "Hono", "React", "TypeScript"],
-    "demoUrl": "",
-    "githubUrl": "https://github.com/studio-zero/edge-pulse",
-    "status": "In Development",
     "featured": true
   }
 ]
