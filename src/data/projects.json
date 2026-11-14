@@ -1,0 +1,53 @@
+[
+  {
+    "id": "chrono-desk",
+    "title": "ChronoDesk",
+    "tagline": "キーボード操作だけで完結する軽量タイムトラッキング＆フォーカス管理アプリ",
+    "description": "開発中のコンテキストスイッチを減らすために設計した、ローカルファーストの作業時間計測アプリです。ブラウザ上で即座に起動し、コマンドパレットからプロジェクトの切り替え・ポモドーロタイマー・日次レポートのエクスポートまでマウスに触れず操作できます。",
+    "highlights": [
+      "Cmd/Ctrl+K で呼び出せるコマンドパレットによるゼロレイテンシ操作",
+      "IndexedDB を用いた完全オフライン動作と JSON / CSV ワンクリック書き出し",
+      "Cloudflare Pages での静的ホスティングにより初期ロード 50KB 未満を実現"
+    ],
+    "image": "/images/chrono-desk.svg",
+    "tags": ["React", "TypeScript", "Tailwind CSS", "Vite"],
+    "demoUrl": "https://chrono-desk.example.com",
+    "githubUrl": "https://github.com/studio-zero/chrono-desk",
+    "status": "Live",
+    "featured": true
+  },
+  {
+    "id": "snap-schema",
+    "title": "SnapSchema",
+    "tagline": "SQL・JSONからER図とTypeScript型定義をリアルタイム生成するビジュアライザ",
+    "description": "テーブル設計の試行錯誤を高速化するためのブラウザ完結型スキーマ設計ツールです。左ペインに SQL の CREATE TABLE 文または JSON Schema を貼り付けると、右ペインにインタラクティブなリレーション図と対応する TypeScript 型定義を即座にプレビューできます。",
+    "highlights": [
+      "WebAssembly 版 SQLite パーサを内蔵し、サーバー送信なしで安全な解析を実行",
+      "SVG / PNG 形式での高解像度エクスポートと URL 共有リンク生成に対応",
+      "リレーション線の自動レイアウト最適化により大規模スキーマでも高い視認性を維持"
+    ],
+    "image": "/images/snap-schema.svg",
+    "tags": ["TypeScript", "React", "SQLite", "Tailwind CSS"],
+    "demoUrl": "https://snap-schema.example.com",
+    "githubUrl": "https://github.com/studio-zero/snap-schema",
+    "status": "Live",
+    "featured": false
+  },
+  {
+    "id": "edge-pulse",
+    "title": "EdgePulse",
+    "tagline": "Cloudflare Workers ベースの超軽量エンドポイント死活監視・レイテンシ可視化基盤",
+    "description": "個人開発で運用している API や Webhook の稼働状況を、グローバルエッジから定期チェックして異常時に通知する監視ダッシュボードです。現在は通知連携と D1 への履歴集計バッチの最終調整を進めており、まもなくベータ公開予定です。",
+    "highlights": [
+      "Cloudflare Workers Cron Triggers を利用した低コスト・マルチリージョン監視",
+      "Hono + D1 によるシンプルで型安全な API 設計とレスポンスタイム分布の集計",
+      "Slack / Discord Webhook へのしきい値ベースアラート通知と復旧検知"
+    ],
+    "image": "/images/edge-pulse-preview.png",
+    "tags": ["Cloudflare Workers", "Hono", "React", "TypeScript"],
+    "demoUrl": "",
+    "githubUrl": "https://github.com/studio-zero/edge-pulse",
+    "status": "In Development",
+    "featured": true
+  }
+]
