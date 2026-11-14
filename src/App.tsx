@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Footer } from './components/Footer';
 import { Header } from './components/Header';
 import { ProjectCard } from './components/ProjectCard';
@@ -6,14 +6,41 @@ import { ProjectModal } from './components/ProjectModal';
 import { TagFilter } from './components/TagFilter';
 import projectsData from './data/projects.json';
 import siteProfileData from './data/site.json';
-import type { Project, SiteProfile } from './types/project';
+import { isLocale, resolveText, UI_TEXT } from './i18n/translations';
+import type { Locale, Project, SiteProfile } from './types/project';
 
 const projects: Project[] = projectsData;
 const siteProfile: SiteProfile = siteProfileData;
+const LOCALE_STORAGE_KEY = 'portfolio-locale';
+
+function getInitialLocale(): Locale {
+  if (typeof window === 'undefined') {
+    return 'ja';
+  }
+  try {
+    const saved = window.localStorage.getItem(LOCALE_STORAGE_KEY);
+    if (isLocale(saved)) {
+      return saved;
+    }
+  } catch {
+    // Ignore storage access errors
+  }
+  return 'ja';
+}
 
 export function App() {
+  const [locale, setLocale] = useState<Locale>(getInitialLocale);
   const [selectedTag, setSelectedTag] = useState<string>('All');
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+
+  useEffect(() => {
+    document.documentElement.lang = locale;
+    try {
+      window.localStorage.setItem(LOCALE_STORAGE_KEY, locale);
+    } catch {
+      // Ignore storage access errors
+    }
+  }, [locale]);
 
   const { allTags, tagCounts } = useMemo(() => {
     const counts: Record<string, number> = {};
@@ -39,9 +66,16 @@ export function App() {
     return projects.filter((project) => project.tags.includes(selectedTag));
   }, [selectedTag]);
 
+  const t = UI_TEXT[locale];
+  const siteName = resolveText(siteProfile.name, locale);
+
   return (
     <div className="flex min-h-screen flex-col bg-slate-50/40 text-slate-900">
-      <Header profile={siteProfile} />
+      <Header
+        profile={siteProfile}
+        locale={locale}
+        onChangeLocale={setLocale}
+      />
 
       <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
         <section aria-labelledby="works-heading" className="space-y-8">
@@ -51,14 +85,12 @@ export function App() {
                 id="works-heading"
                 className="text-lg font-semibold tracking-tight text-slate-900"
               >
-                Works
+                {t.worksHeading}
               </h2>
-              <p className="text-sm text-slate-500">
-                カードをクリックすると詳細や工夫した点を確認できます。
-              </p>
+              <p className="text-sm text-slate-500">{t.worksSubheading}</p>
             </div>
             <p className="font-mono text-xs text-slate-500 tabular-nums">
-              {filteredProjects.length} / {projects.length} projects
+              {filteredProjects.length} / {projects.length} {t.projectsCountSuffix}
             </p>
           </div>
 
@@ -67,6 +99,7 @@ export function App() {
             selectedTag={selectedTag}
             totalCount={projects.length}
             tagCounts={tagCounts}
+            locale={locale}
             onSelectTag={setSelectedTag}
           />
 
@@ -76,24 +109,24 @@ export function App() {
                 <ProjectCard
                   key={project.id}
                   project={project}
+                  locale={locale}
                   onSelect={setSelectedProject}
                 />
               ))}
             </div>
           ) : (
             <div className="rounded-2xl border border-dashed border-slate-300 bg-white px-6 py-16 text-center">
-              <p className="text-sm text-slate-500">
-                該当するタグの作品が見つかりませんでした。
-              </p>
+              <p className="text-sm text-slate-500">{t.noMatchingProjects}</p>
             </div>
           )}
         </section>
       </main>
 
-      <Footer siteName={siteProfile.name} />
+      <Footer siteName={siteName} locale={locale} />
 
       <ProjectModal
         project={selectedProject}
+        locale={locale}
         onClose={() => setSelectedProject(null)}
       />
     </div>

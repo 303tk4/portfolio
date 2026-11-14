@@ -1,14 +1,35 @@
 [
   {
     "id": "map-demand-analyzer",
-    "title": "業態別・需要と空白地帯の分析マップ（地域は日本・台湾に対応）",
-    "tagline": "あなたの選んだ業種について、Google Mapsで選んだ場所の、需要、競合、出店の有望度などを分析します。",
-    "description": "Googleマップ上で任意の場所を選び、その場所の、その業種の有望度を分析します。類似の市場文分析は、主に企業向け(BtoB)の高額かつ閉じられたサービスが中心です。しかし、個人や小規模事業者が手軽にその地域の有望度を調べたいレベルであれば、そのような必要はありません。アルゴリズムとAIが、既存店の商圏とレビュースコア・駅乗降客数などの人口動態・用途地域などから判定します。",
-    "highlights": [
-      "Antigravity+GeminiとClaude Codeによる製作です。Vercel上のNext.jsで動いており、オープンデータのGeoJSONとGoogle Maps APIを組み合わせ、ブラウザ上だけで複数指標のヒートマップを高速に重ね合わせられる設計にしています。Google MapsやGeminiなど複数のAPIを利用しています。"
-    ],
+    "title": {
+      "ja": "業態別・需要と空白地帯の分析マップ（地域は日本・台湾に対応）",
+      "en": "Trade Area & White-Space Demand Map (Japan & Taiwan)",
+      "zh-TW": "業態別・需求與市場空白地帶分析地圖（支援日本・台灣）"
+    },
+    "tagline": {
+      "ja": "あなたの選んだ業種について、Google Mapsで選んだ場所の、需要、競合、出店の有望度などを分析します。",
+      "en": "Analyze local demand, competitors, and site potential for your chosen business category on any point in Google Maps.",
+      "zh-TW": "針對您選擇的業種，在 Google Maps 上選定任意地點，即時分析當地需求、競品分布與開店潛力。"
+    },
+    "description": {
+      "ja": "Googleマップ上で任意の場所を選び、その場所の、その業種の有望度を分析します。類似の市場文分析は、主に企業向け(BtoB)の高額かつ閉じられたサービスが中心です。しかし、個人や小規模事業者が手軽にその地域の有望度を調べたいレベルであれば、そのような必要はありません。アルゴリズムとAIが、既存店の商圏とレビュースコア・駅乗降客数などの人口動態・用途地域などから判定します。",
+      "en": "Pick any location on Google Maps to evaluate business viability for your target industry. Traditional trade-area analytics are locked behind expensive enterprise B2B suites, which is overkill for solo founders and small businesses doing quick site validation. Algorithms and AI combine existing competitor catchments, review scores, station ridership, population meshes, and zoning data into an accessible score.",
+      "zh-TW": "在 Google 地圖上選擇任意地點，即可評估該區域針對特定業種的開店潛力。傳統商圈分析多為高價封閉的企業級（B2B）服務，但對於想快速評估選址潛力的個人或小型創業者而言並不需要如此複雜。透過演算法與 AI，結合既有店家商圈、評論分數、車站進出人次、網格人口動態與土地使用分區等指標進行綜合判定。"
+    },
+    "highlights": {
+      "ja": [
+        "Antigravity+GeminiとClaude Codeによる製作です。Vercel上のNext.jsで動いており、オープンデータのGeoJSONとGoogle Maps APIを組み合わせ、ブラウザ上だけで複数指標のヒートマップを高速に重ね合わせられる設計にしています。Google MapsやGeminiなど複数のAPIを利用しています。"
+      ],
+      "en": [
+        "Built with Antigravity + Gemini and Claude Code. Powered by Next.js on Vercel, combining open-data GeoJSON layers with Google Maps and Gemini APIs to overlay multi-factor demand heatmaps directly in the browser."
+      ],
+      "zh-TW": [
+        "使用 Antigravity + Gemini 與 Claude Code 製作，部署於 Vercel 的 Next.js 應用程式。結合開放資料 GeoJSON 與 Google Maps、Gemini 等多項 API，讓瀏覽器端即可快速疊加多指標需求熱區圖。"
+      ]
+    },
     "image": "/images/map-demand-analyzer.png",
     "tags": ["Next.js", "Google Maps API", "Gemini API", "GeoJSON", "Vercel"],
+    "languages": ["en", "ja", "zh-TW"],
     "demoUrl": "https://map-demand-analyzer.fromzeropoint.com/",
     "githubUrl": "https://github.com/303tk4/map-based-demand-analyzer",
     "status": "Live",
@@ -16,63 +37,74 @@
   },
   {
     "id": "tc-vocab-app",
-    "title": "學中文 - 繁体中文の学習",
-    "tagline": "AIによる現実的な会話例や、Anki風の単語カードなどのモードが選べる。希少な台湾TOCFL検定対応",
-    "description": "ありそうで存在しなかった繁体中文の学習アプリです。コンビニ、屋台、病院、PC修理で発生する会話など、既存のアプリや書籍よりもリアルな繫体中文をAI例文で再現しました。単語も、繫体中文のTOCFL検定の上級（流利級，精通級）まであらかじめ用意しました。スマホ・PC両対応。自分でため込んだメモもインポートできます。",
-    "highlights": [
-      "技術面では：ほぼClaude Code一本で製作したPWAです。Viteでビルド、 React + TypeScriptで書かれています。ブラウザにデータ保持（IndexedDB + Dexie）させて原則通信を行わない、ローカルファーストな設計です。"
-    ],
+    "title": {
+      "ja": "學中文 - 繁体中文の学習",
+      "en": "學中文 - Traditional Chinese Learning PWA",
+      "zh-TW": "學中文 - 繁體中文學習應用"
+    },
+    "tagline": {
+      "ja": "AIによる現実的な会話例や、Anki風の単語カードなどのモードが選べる。希少な台湾TOCFL検定対応",
+      "en": "Learn Taiwanese Mandarin with realistic AI scene dialogues, Anki-style spaced repetition flashcards, and rare TOCFL vocabulary coverage.",
+      "zh-TW": "提供擬真 AI 情境對話與 Anki 風格單字卡等多元學習模式，完整收錄稀有的台灣 TOCFL 華語文能力測驗詞彙。"
+    },
+    "description": {
+      "ja": "ありそうで存在しなかった繁体中文の学習アプリです。コンビニ、屋台、病院、PC修理で発生する会話など、既存のアプリや書籍よりもリアルな繫体中文をAI例文で再現しました。単語も、繫体中文のTOCFL検定の上級（流利級，精通級）まであらかじめ用意しました。スマホ・PC両対応。自分でため込んだメモもインポートできます。",
+      "en": "A Traditional Chinese learning app built to fill a gap left by existing tools. Realistic AI-generated dialogues cover everyday Taiwanese situations—convenience stores, night markets, clinics, and phone/PC repair. Includes built-in TOCFL vocabulary up to Fluent and Mastery levels, works seamlessly on mobile and desktop, and lets you import your own study notes.",
+      "zh-TW": "一款補足市面空缺的繁體中文學習應用。透過 AI 例句重現便利商店、夜市、診所醫院、手機電腦維修等更貼近台灣生活的真實對話；內建涵蓋至 TOCFL 流利級與精通級的詞彙庫。支援手機與電腦雙平台，並可匯入自己累積的學習筆記。"
+    },
+    "highlights": {
+      "ja": [
+        "技術面では：ほぼClaude Code一本で製作したPWAです。Viteでビルド、 React + TypeScriptで書かれています。ブラウザにデータ保持（IndexedDB + Dexie）させて原則通信を行わない、ローカルファーストな設計です。"
+      ],
+      "en": [
+        "Built almost entirely with Claude Code as an offline-ready PWA using Vite, React, and TypeScript. Stores study progress locally in IndexedDB via Dexie with a local-first, zero-backend-required architecture."
+      ],
+      "zh-TW": [
+        "技術架構上幾乎完全使用 Claude Code 開發為離線可用的 PWA，以 Vite 建置並採用 React + TypeScript 撰寫。透過 IndexedDB + Dexie 將學習資料保留於瀏覽器端，實現原則上不需後端通訊的 Local-first 設計。"
+      ]
+    },
     "image": "/images/tc-vocab.png",
     "tags": ["React", "TypeScript", "Vite", "PWA", "IndexedDB"],
+    "languages": ["en", "ja", "zh-TW", "vi"],
     "demoUrl": "https://tc-vocab.fromzeropoint.com/",
     "githubUrl": "https://github.com/303tk4/tc-vocab",
     "status": "Live",
     "featured": true
   },
   {
-    "id": "chrono-desk",
-    "title": "ChronoDesk",
-    "tagline": "キーボード操作だけで完結する軽量タイムトラッキング＆フォーカス管理アプリ",
-    "description": "開発中のコンテキストスイッチを減らすために設計した、ローカルファーストの作業時間計測アプリです。ブラウザ上で即座に起動し、コマンドパレットからプロジェクトの切り替え・ポモドーロタイマー・日次レポートのエクスポートまでマウスに触れず操作できます。",
-    "highlights": [
-      "Cmd/Ctrl+K で呼び出せるコマンドパレットによるゼロレイテンシ操作",
-      "IndexedDB を用いた完全オフライン動作と JSON / CSV ワンクリック書き出し",
-      "Cloudflare Pages での静的ホスティングにより初期ロード 50KB 未満を実現"
-    ],
-    "image": "/images/chrono-desk.svg",
-    "tags": ["React", "TypeScript", "Tailwind CSS", "Vite"],
-    "demoUrl": "https://chrono-desk.example.com",
-    "githubUrl": "https://github.com/studio-zero/chrono-desk",
-    "status": "Live",
-    "featured": true
-  },
-  {
-    "id": "snap-schema",
-    "title": "SnapSchema",
-    "tagline": "SQL・JSONからER図とTypeScript型定義をリアルタイム生成するビジュアライザ",
-    "description": "テーブル設計の試行錯誤を高速化するためのブラウザ完結型スキーマ設計ツールです。左ペインに SQL の CREATE TABLE 文または JSON Schema を貼り付けると、右ペインにインタラクティブなリレーション図と対応する TypeScript 型定義を即座にプレビューできます。",
-    "highlights": [
-      "WebAssembly 版 SQLite パーサを内蔵し、サーバー送信なしで安全な解析を実行",
-      "SVG / PNG 形式での高解像度エクスポートと URL 共有リンク生成に対応",
-      "リレーション線の自動レイアウト最適化により大規模スキーマでも高い視認性を維持"
-    ],
-    "image": "/images/snap-schema.svg",
-    "tags": ["TypeScript", "React", "SQLite", "Tailwind CSS"],
-    "demoUrl": "https://snap-schema.example.com",
-    "githubUrl": "https://github.com/studio-zero/snap-schema",
-    "status": "Live",
-    "featured": false
-  },
-  {
     "id": "edge-pulse",
-    "title": "EdgePulse",
-    "tagline": "Cloudflare Workers ベースの超軽量エンドポイント死活監視・レイテンシ可視化基盤",
-    "description": "個人開発で運用している API や Webhook の稼働状況を、グローバルエッジから定期チェックして異常時に通知する監視ダッシュボードです。現在は通知連携と D1 への履歴集計バッチの最終調整を進めており、まもなくベータ公開予定です。",
-    "highlights": [
-      "Cloudflare Workers Cron Triggers を利用した低コスト・マルチリージョン監視",
-      "Hono + D1 によるシンプルで型安全な API 設計とレスポンスタイム分布の集計",
-      "Slack / Discord Webhook へのしきい値ベースアラート通知と復旧検知"
-    ],
+    "title": {
+      "ja": "EdgePulse（開発中）",
+      "en": "EdgePulse (In Development)",
+      "zh-TW": "EdgePulse（開發中）"
+    },
+    "tagline": {
+      "ja": "Cloudflare Workers ベースの超軽量エンドポイント死活監視・レイテンシ可視化基盤",
+      "en": "Ultra-lightweight endpoint uptime monitoring and latency visualization built on Cloudflare Workers.",
+      "zh-TW": "基於 Cloudflare Workers 的超輕量端點存活監控與延遲視覺化平台。"
+    },
+    "description": {
+      "ja": "個人開発で運用している API や Webhook の稼働状況を、グローバルエッジから定期チェックして異常時に通知する監視ダッシュボードです。現在は通知連携と D1 への履歴集計バッチの最終調整を進めており、まもなくベータ公開予定です。",
+      "en": "A monitoring dashboard that checks personal APIs and webhooks periodically from global edge locations and sends alerts on downtime. Currently finalizing notification integrations and D1 history aggregation batches ahead of beta release.",
+      "zh-TW": "針對個人開發維運的 API 與 Webhook，從全球邊緣節點定期檢查運作狀態並在異常時發送通知的監控儀表板。目前正在進行通知串接與 D1 歷史統計批次的最後調整，預計近期開放 Beta 版。"
+    },
+    "highlights": {
+      "ja": [
+        "Cloudflare Workers Cron Triggers を利用した低コスト・マルチリージョン監視",
+        "Hono + D1 によるシンプルで型安全な API 設計とレスポンスタイム分布の集計",
+        "Slack / Discord Webhook へのしきい値ベースアラート通知と復旧検知"
+      ],
+      "en": [
+        "Low-cost multi-region monitoring powered by Cloudflare Workers Cron Triggers",
+        "Type-safe API with Hono + D1 and response-time distribution aggregation",
+        "Threshold-based Slack / Discord webhook alerts and automatic recovery detection"
+      ],
+      "zh-TW": [
+        "運用 Cloudflare Workers Cron Triggers 實現低成本多區域監控",
+        "透過 Hono + D1 打造簡潔且型別安全的 API 並統計回應時間分布",
+        "支援 Slack / Discord Webhook 閾值告警通知與自動恢復偵測"
+      ]
+    },
     "image": "/images/edge-pulse-preview.png",
     "tags": ["Cloudflare Workers", "Hono", "React", "TypeScript"],
     "demoUrl": "",

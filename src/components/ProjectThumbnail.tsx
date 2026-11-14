@@ -5,6 +5,7 @@ interface ProjectThumbnailProps {
   src: string;
   alt: string;
   title: string;
+  unavailableLabel?: string;
   className?: string;
 }
 
@@ -12,6 +13,7 @@ export function ProjectThumbnail({
   src,
   alt,
   title,
+  unavailableLabel = 'Preview Unavailable',
   className = '',
 }: ProjectThumbnailProps) {
   const [failedSrc, setFailedSrc] = useState<string | null>(null);
@@ -23,7 +25,7 @@ export function ProjectThumbnail({
     >
       {showPlaceholder ? (
         <div
-          aria-label={`${title} プレースホルダー`}
+          aria-label={`${title} placeholder`}
           className="flex h-full w-full flex-col items-center justify-center gap-2.5 bg-gradient-to-br from-slate-50 via-slate-100 to-slate-200/70 px-6 text-center"
           style={{
             backgroundImage:
@@ -39,7 +41,7 @@ export function ProjectThumbnail({
               {title}
             </p>
             <p className="font-mono text-[11px] tracking-wider text-slate-400 uppercase">
-              Preview Unavailable
+              {unavailableLabel}
             </p>
           </div>
         </div>

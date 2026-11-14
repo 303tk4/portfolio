@@ -1,11 +1,17 @@
+export type Locale = 'ja' | 'en' | 'zh-TW';
+
+export type LocalizedString = string | Partial<Record<Locale, string>>;
+export type LocalizedStringArray = string[] | Partial<Record<Locale, string[]>>;
+
 export interface Project {
   id: string;
-  title: string;
-  tagline: string;
-  description: string;
-  highlights: string[];
+  title: LocalizedString;
+  tagline: LocalizedString;
+  description: LocalizedString;
+  highlights: LocalizedStringArray;
   image: string;
   tags: string[];
+  languages?: string[];
   demoUrl: string;
   githubUrl: string;
   status: string;
@@ -13,9 +19,9 @@ export interface Project {
 }
 
 export interface SiteProfile {
-  name: string;
-  role: string;
-  bio: string;
+  name: LocalizedString;
+  role: LocalizedString;
+  bio: LocalizedString;
   githubUrl: string;
   xUrl: string;
 }

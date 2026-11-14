@@ -1,7 +1,15 @@
 {
   "name": "Studio Zero",
-  "role": "Indie Developer & Product Builder",
-  "bio": "日々のちょっとした不便を解決する、小さくて心地よいWebアプリや開発者向けツールを個人で開発・公開しています。",
-  "githubUrl": "https://github.com/studio-zero",
+  "role": {
+    "ja": "Indie Developer & Product Builder",
+    "en": "Indie Developer & Product Builder",
+    "zh-TW": "Indie Developer & Product Builder"
+  },
+  "bio": {
+    "ja": "日々のちょっとした不便を解決する、小さくて心地よいWebアプリや開発者向けツールを個人で開発・公開しています。",
+    "en": "Building focused, practical web apps and developer tools to solve everyday problems — crafted independently and shipped to the web.",
+    "zh-TW": "獨立開發並公開實用且簡潔的 Web 應用程式與開發者工具，致力於解決日常生活中的各種小痛點。"
+  },
+  "githubUrl": "https://github.com/303tk4",
   "xUrl": "https://x.com/studio_zero_dev"
 }
