@@ -1,5 +1,20 @@
 [
   {
+    "id": "map-demand-analyzer",
+    "title": "業態別・需要と空白地帯の分析マップ（地域は日本・台湾に対応）",
+    "tagline": "あなたの選んだ業種について、Google Mapsで選んだ場所の、需要、競合、出店の有望度などを分析します。",
+    "description": "Googleマップ上で任意の場所を選び、その場所の、その業種の有望度を分析します。類似の市場文分析は、主に企業向け(BtoB)の高額かつ閉じられたサービスが中心です。しかし、個人や小規模事業者が手軽にその地域の有望度を調べたいレベルであれば、そのような必要はありません。アルゴリズムとAIが、既存店の商圏とレビュースコア・駅乗降客数などの人口動態・用途地域などから判定します。",
+    "highlights": [
+      "Antigravity+GeminiとClaude Codeによる製作です。Vercel上のNext.jsで動いており、オープンデータのGeoJSONとGoogle Maps APIを組み合わせ、ブラウザ上だけで複数指標のヒートマップを高速に重ね合わせられる設計にしています。Google MapsやGeminiなど複数のAPIを利用しています。"
+    ],
+    "image": "/images/map-demand-analyzer.png",
+    "tags": ["Next.js", "Google Maps API", "Gemini API", "GeoJSON", "Vercel"],
+    "demoUrl": "https://map-demand-analyzer.fromzeropoint.com/",
+    "githubUrl": "https://github.com/303tk4/map-based-demand-analyzer",
+    "status": "Live",
+    "featured": true
+  },
+  {
     "id": "tc-vocab-app",
     "title": "學中文 - 繁体中文の学習",
     "tagline": "AIによる現実的な会話例や、Anki風の単語カードなどのモードが選べる。希少な台湾TOCFL検定対応",
