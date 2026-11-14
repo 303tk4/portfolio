@@ -1,5 +1,20 @@
 [
   {
+    "id": "tc-vocab-app",
+    "title": "學中文 - 繁体中文の学習",
+    "tagline": "AIによる現実的な会話例や、Anki風の単語カードなどのモードが選べる。希少な台湾TOCFL検定対応",
+    "description": "ありそうで存在しなかった繁体中文の学習アプリです。コンビニ、屋台、病院、PC修理で発生する会話など、既存のアプリや書籍よりもリアルな繫体中文をAI例文で再現しました。単語も、繫体中文のTOCFL検定の上級（流利級，精通級）まであらかじめ用意しました。スマホ・PC両対応。自分でため込んだメモもインポートできます。",
+    "highlights": [
+      "技術面では：ほぼClaude Code一本で製作したPWAです。Viteでビルド、 React + TypeScriptで書かれています。ブラウザにデータ保持（IndexedDB + Dexie）させて原則通信を行わない、ローカルファーストな設計です。"
+    ],
+    "image": "/images/tc-vocab.png",
+    "tags": ["React", "TypeScript", "Vite", "PWA", "IndexedDB"],
+    "demoUrl": "https://tc-vocab.fromzeropoint.com/",
+    "githubUrl": "https://github.com/303tk4/tc-vocab",
+    "status": "Live",
+    "featured": true
+  },
+  {
     "id": "chrono-desk",
     "title": "ChronoDesk",
     "tagline": "キーボード操作だけで完結する軽量タイムトラッキング＆フォーカス管理アプリ",
