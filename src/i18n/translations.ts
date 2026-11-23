@@ -118,6 +118,7 @@ export const UI_TEXT: Record<Locale, UiTranslations> = {
     statuses: {
       Live: 'Live',
       'In Development': 'In Development',
+      'Coming Soon': 'Play Store 公開予定',
       Beta: 'Beta',
       Archived: 'Archived',
     },
@@ -147,6 +148,7 @@ export const UI_TEXT: Record<Locale, UiTranslations> = {
     statuses: {
       Live: 'Live',
       'In Development': 'In Development',
+      'Coming Soon': 'Coming to Play Store',
       Beta: 'Beta',
       Archived: 'Archived',
     },
@@ -176,6 +178,7 @@ export const UI_TEXT: Record<Locale, UiTranslations> = {
     statuses: {
       Live: 'Live',
       'In Development': 'In Development',
+      'Coming Soon': '預定上架 Play Store',
       Beta: 'Beta',
       Archived: 'Archived',
     },

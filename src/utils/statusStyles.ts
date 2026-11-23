@@ -12,6 +12,10 @@ const STATUS_STYLE_MAP: Record<string, StatusStyle> = {
     badge: 'bg-amber-50 text-amber-700 border-amber-200/80',
     dot: 'bg-amber-500',
   },
+  'Coming Soon': {
+    badge: 'bg-indigo-50 text-indigo-700 border-indigo-200/80',
+    dot: 'bg-indigo-500',
+  },
   Beta: {
     badge: 'bg-sky-50 text-sky-700 border-sky-200/80',
     dot: 'bg-sky-500',

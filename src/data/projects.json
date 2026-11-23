@@ -2,37 +2,55 @@
   {
     "id": "Kimagure-AudiobookPlayer",
     "title": {
-      "ja": "きまぐれオーディオブックプレイヤー Kimagure-AudiobookPlayer",
-      "en": "Kimagure-AudiobookPlayer",
-      "zh-TW": "隨興有聲書播放器 Kimagure-AudiobookPlayer"
+      "ja": "きまぐれオーディオブックプレイヤー（Kimagure Audiobook Player）",
+      "en": "Kimagure Audiobook Player",
+      "zh-TW": "隨興有聲書播放器（Kimagure Audiobook Player）"
     },
     "tagline": {
-      "ja": "途中まで聴いていた複数のオーディオブックを、ワンタップで選んで即再生できる。忙しい人や移り気な人向けのプレイヤー",
-      "en": "Resume any of your in-progress audiobooks with a single tap. Built for busy or mood-driven listeners juggling multiple titles.",
-      "zh-TW": "只需單鍵點擊即可從上次中斷處立即續聽多本有聲書。專為忙碌或喜歡隨心情切換書籍的聽眾打造。"
+      "ja": "最大6個の再生デッキから、聴き途中のオーディオブックやポッドキャスト再生リストを、いつでも1タップで即再生できるマルチデッキ・プレイヤー。",
+      "en": "A one-of-a-kind multi-deck Android player that lets you resume up to 6 in-progress audiobooks and podcast playlists with a single tap.",
+      "zh-TW": "獨一無二的多卡座 Android 播放器——從最多 6 個播放面板中，隨時單鍵即時續播聆聽中的有聲書與 Podcast 播放清單。"
     },
     "description": {
-      "ja": "5時間集中してオーディオブックを聴ける人は多くありません。途中でやめたあと、別の本を再生したくなったとき・そしてまた戻りたいときは、本棚に戻って選びなおす手間がかかります。いっぽうこのプレイヤーは、4本同時並行で聴くことを前提に、ワンタップでどれでも一発再生できる再生画面を備えています。小説とビジネス書を、両方少しずつ読み進める、ということも可能です。",
-      "en": "Few people can focus on a single audiobook for five hours straight. Switching to another book midway—and jumping back later—usually forces tedious trips back to the library shelf. Designed around listening to up to four titles in parallel, this player puts all four slots directly on the playback screen for instant one-tap switching, making it effortless to progress through novels and business books side by side.",
-      "zh-TW": "很少人能一口氣專注聽完五小時的有聲書。中途想換聽另一本書、過陣子又想切回來時，往往得回到書櫃重新挑選。這款播放器以同時並行聆聽 4 本書為前提，在播放畫面直接提供單鍵切換即時續播，讓小說與商業書都能輕鬆齊頭並進。"
+      "ja": "何時間も続けて1冊のオーディオブックだけを聴き切るのは簡単ではありません。気分を変えて別の本やポッドキャストを聴き、また元の本に戻りたくなったとき、一般的なプレイヤーでは本棚に戻って探し直す手間がかかります。Kimagure Audiobook Player は、最大6個の再生デッキに聴き途中のオーディオブックやポッドキャスト再生リストを常駐させ、いつでもワンタップで切り替えて続きから即再生できる、ほかに例を見ない便利すぎるプレイヤーです。開発はほぼ完了しており、Google Play Store への公開を予定しています。",
+      "en": "Few listeners stay locked into a single audiobook for hours on end. When you want to switch to another title or a podcast—and jump back later—traditional players force tedious trips back to the library. Kimagure Audiobook Player keeps up to six in-progress audiobooks and podcast playlists ready on a 6-tile Now Reading deck so you can switch and resume any of them with a single tap. Development is nearly complete, with a Google Play Store release planned.",
+      "zh-TW": "很少人能連續數小時只聽同一本有聲書。想轉換心情改聽另一本書或 Podcast、過一陣子又想切回來時，傳統播放器總要退回書庫重新尋找。Kimagure Audiobook Player 可將最多 6 組聆聽中的有聲書與 Podcast 播放清單常駐於首頁的 6 格面板，隨時單鍵點擊即可從上次中斷處即時續播。目前已接近開發完成，預定上架 Google Play Store。"
     },
     "highlights": {
       "ja": [
-        "VS Code上からClaude Codeで製作、エミュレーションなどでAndroid Studioを使用。開発中"
+        "最大6個の再生デッキ（Now Reading）から、オーディオブックもポッドキャスト再生リストも1タップで即切り替え・再生",
+        "デッキごとに再生位置・再生速度・音量ブースト・スリープタイマーを独立して保存し、複数作品の並行視聴に最適化",
+        "ソートや絞り込みに対応した本棚（Bookshelf）を備え、多数の手持ちタイトルもスマートに管理可能",
+        "技術面：Kotlin による Android ネイティブアプリ。UI フレームワークに Jetpack Compose、ローカル DB に Room SQLite を採用"
       ],
       "en": [
-        "Developed with Claude Code inside VS Code alongside Android Studio for device emulation and testing (In Development)."
+        "Up to 6 Now Reading playback decks for instant one-tap switching across audiobooks and podcast playlists",
+        "Independent per-deck playback position, speed, volume boost, and sleep timer states",
+        "Full-featured Bookshelf with sorting, filtering, and progress tracking across large collections",
+        "Native Android app built in Kotlin with Jetpack Compose for UI and Room SQLite for local persistence (Google Play release planned)"
       ],
       "zh-TW": [
-        "透過 VS Code 中的 Claude Code 進行開發，並搭配 Android Studio 進行模擬器測試（開發中）。"
+        "最多 6 個播放卡座（Now Reading），單鍵點擊即可即時切換並續播有聲書或 Podcast 播放清單",
+        "每個卡座皆獨立保存播放進度、倍速、音量增強與睡眠定時設定",
+        "內建支援排序、篩選與進度管理的書櫃（Bookshelf），輕鬆整理大量收藏",
+        "技術架構：以 Kotlin 開發的 Android 原生應用，採用 Jetpack Compose 介面框架與 Room SQLite 本地資料庫（預定上架 Google Play）"
       ]
     },
-    "image": "/images/kimagure-audiobookplayer.jpg",
-    "tags": ["Android", "Mobile"],
+    "image": "/images/kimagure-tiles.jpg",
+    "screenshots": {
+      "main": "/images/kimagure-tiles.jpg",
+      "secondary": [
+        "/images/kimagure-player-1.png",
+        "/images/kimagure-player-2.png",
+        "/images/kimagure-bookshelf.jpg"
+      ]
+    },
+    "tags": ["Android", "Kotlin", "Jetpack Compose", "Room SQLite"],
     "demoUrl": "",
     "githubUrl": "",
-    "status": "In Development",
-    "featured": true
+    "status": "Coming Soon",
+    "featured": true,
+    "hero": true
   },
   {
     "id": "map-demand-analyzer",

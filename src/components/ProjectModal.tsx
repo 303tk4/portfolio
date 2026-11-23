@@ -4,6 +4,7 @@ import { resolveList, resolveText, UI_TEXT } from '../i18n/translations';
 import type { Locale, Project } from '../types/project';
 import { GitHubIcon } from './BrandIcons';
 import { ProjectBadges } from './ProjectBadges';
+import { ProjectShowcaseGallery } from './ProjectShowcaseGallery';
 import { ProjectThumbnail } from './ProjectThumbnail';
 
 interface ProjectModalProps {
@@ -69,12 +70,21 @@ export function ProjectModal({ project, locale, onClose }: ProjectModalProps) {
         </button>
 
         <div className="border-b border-slate-100">
-          <ProjectThumbnail
-            src={project.image}
-            alt={`${title}${t.modalPreviewAltSuffix}`}
-            title={title}
-            unavailableLabel={t.previewUnavailableLabel}
-          />
+          {project.screenshots ? (
+            <ProjectShowcaseGallery
+              screenshots={project.screenshots}
+              title={title}
+              altSuffix={t.modalPreviewAltSuffix}
+              compact
+            />
+          ) : (
+            <ProjectThumbnail
+              src={project.image}
+              alt={`${title}${t.modalPreviewAltSuffix}`}
+              title={title}
+              unavailableLabel={t.previewUnavailableLabel}
+            />
+          )}
         </div>
 
         <div className="space-y-6 p-6 sm:p-8">
