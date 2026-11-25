@@ -11,6 +11,7 @@ export interface ProjectScreenshots {
 export interface Project {
   id: string;
   title: LocalizedString;
+  subtitleNames?: string[];
   tagline: LocalizedString;
   description: LocalizedString;
   highlights: LocalizedStringArray;
@@ -20,6 +21,7 @@ export interface Project {
   languages?: string[];
   demoUrl: string;
   githubUrl: string;
+  detailPath?: string;
   status: string;
   featured: boolean;
   hero?: boolean;

@@ -1,0 +1,176 @@
+{
+  "video": {
+    "url": "",
+    "aspect": "portrait",
+    "sectionTitle": {
+      "ja": "デモ動画",
+      "en": "Demo Video",
+      "zh-TW": "操作示範影片"
+    },
+    "sectionSubtitle": {
+      "ja": "6つの再生デッキを切り替えて即再生する実際の操作イメージです。",
+      "en": "Watch how the 6-deck player switches between audiobooks and podcasts in one tap.",
+      "zh-TW": "實際操作示範：單鍵切換 6 個播放面板並即時續播有聲書與 Podcast。"
+    },
+    "placeholderTitle": {
+      "ja": "ショートデモ動画（挿入予定）",
+      "en": "Short Demo Video (Slot Ready)",
+      "zh-TW": "短片操作示範（預留位置）"
+    },
+    "placeholderDescription": {
+      "ja": "public/videos/ に動画ファイル（MP4等）を配置するか、src/data/kimagurePage.json の video.url に動画URL（MP4 / YouTube 埋め込み等）を設定すると、この枠にそのまま表示されます。",
+      "en": "Place a video file in public/videos/ or set video.url in src/data/kimagurePage.json (MP4 or YouTube embed URL) to display the demo video right here.",
+      "zh-TW": "將影片檔放入 public/videos/，或在 src/data/kimagurePage.json 的 video.url 填入影片網址（MP4 或 YouTube 嵌入網址），即可在此直接播放。"
+    },
+    "highlights": {
+      "ja": [
+        "「Now Reading」の6マス画面から聴きたい本・ポッドキャストを1タップで切り替え",
+        "再生途中でも前回の停止位置・再生速度・音量ブースト設定のまま即再開",
+        "全画面プレイヤーと本棚（Bookshelf）をスムーズに行き来できるUI"
+      ],
+      "en": [
+        "Switch between 6 active audiobooks or podcast playlists from the Now Reading grid in one tap",
+        "Resume instantly with per-deck playback position, speed, and volume boost preserved",
+        "Smooth navigation between full-screen player controls and the Bookshelf library"
+      ],
+      "zh-TW": [
+        "從「Now Reading」6 格面板單鍵切換想聽的書籍或 Podcast 播放清單",
+        "保留各卡座獨立的播放進度、倍速與音量增強設定並立即續播",
+        "在全螢幕播放器與書櫃（Bookshelf）之間流暢切換操作"
+      ]
+    }
+  },
+  "gallery": {
+    "sectionTitle": {
+      "ja": "スクリーンショット",
+      "en": "Screenshots",
+      "zh-TW": "畫面截圖"
+    },
+    "sectionSubtitle": {
+      "ja": "開発中の実機スクリーンショットです。",
+      "en": "Screenshots captured from the Android build.",
+      "zh-TW": "開發版本實機畫面截圖。"
+    },
+    "items": [
+      {
+        "src": "/images/kimagure-tiles.jpg",
+        "label": {
+          "ja": "6マス再生デッキ（Now Reading）",
+          "en": "6-Deck Home (Now Reading)",
+          "zh-TW": "6 格播放面板（Now Reading）"
+        },
+        "caption": {
+          "ja": "聴き途中のオーディオブックやポッドキャストを最大6つ並べて、1タップで即再生・切り替え。",
+          "en": "Keep up to 6 in-progress audiobooks and podcasts ready for instant one-tap playback.",
+          "zh-TW": "最多可並列 6 組聆聽中的有聲書與 Podcast，單鍵點擊立即切換續播。"
+        }
+      },
+      {
+        "src": "/images/kimagure-player-1.png",
+        "label": {
+          "ja": "全画面プレイヤー（エピソード管理）",
+          "en": "Full-Screen Player (Episodes)",
+          "zh-TW": "全螢幕播放器（章節／單集管理）"
+        },
+        "caption": {
+          "ja": "速度変更、音量ブースト、スリープタイマー、スキップボタンを押しやすく配置。",
+          "en": "Quick-access controls for speed, volume boost, sleep timer, and custom skip intervals.",
+          "zh-TW": "直覺配置倍速調整、音量增強、睡眠定時與快轉／倒轉按鍵。"
+        }
+      },
+      {
+        "src": "/images/kimagure-player-2.png",
+        "label": {
+          "ja": "全画面プレイヤー（ポッドキャスト）",
+          "en": "Full-Screen Player (Podcasts)",
+          "zh-TW": "全螢幕播放器（Podcast 模式）"
+        },
+        "caption": {
+          "ja": "作品カラーに合わせたダイナミックな配色で、聴いている番組をひと目で識別。",
+          "en": "Artwork-tinted player theme adapts to each deck so every title feels distinct.",
+          "zh-TW": "依封面主色動態呈現介面色彩，一眼辨識目前播放的節目內容。"
+        }
+      },
+      {
+        "src": "/images/kimagure-bookshelf.jpg",
+        "label": {
+          "ja": "本棚画面（Bookshelf）",
+          "en": "Library (Bookshelf)",
+          "zh-TW": "書櫃管理（Bookshelf）"
+        },
+        "caption": {
+          "ja": "多数のタイトルをソート・ステータス絞り込み・検索で素早く整理し、デッキへ追加。",
+          "en": "Browse, sort, and filter large audiobook libraries with mini-player controls.",
+          "zh-TW": "支援排序、狀態篩選與快速搜尋，輕鬆管理大量館藏並加入播放面板。"
+        }
+      }
+    ]
+  },
+  "apkRelease": {
+    "sectionTitle": {
+      "ja": "モニター向け APK ダウンロード（Play Store 公開前）",
+      "en": "Tester APK Download (Pre-Play Store)",
+      "zh-TW": "測試員專用 APK 下載（Play Store 上架前）"
+    },
+    "sectionSubtitle": {
+      "ja": "Google Play Store 公開前の動作確認に協力いただけるご友人・モニター向けの先行配布リンクです。",
+      "en": "Pre-release Android APK distribution for invited testers prior to the Google Play Store launch.",
+      "zh-TW": "提供給受邀協助測試的朋友於 Google Play Store 正式上架前搶先安裝的 APK 下載區。"
+    },
+    "badgeLabel": {
+      "ja": "パスワード保護付き共有リンク",
+      "en": "Password-Protected Share",
+      "zh-TW": "設有密碼保護之分享連結"
+    },
+    "providerLabel": "Google Drive / OneDrive",
+    "versionLabel": "Android APK（Tester Build）",
+    "downloadUrl": "",
+    "buttonLabel": {
+      "ja": "APK ダウンロードページを開く",
+      "en": "Open APK Download Link",
+      "zh-TW": "開啟 APK 下載連結"
+    },
+    "pendingButtonLabel": {
+      "ja": "配布リンク準備中（URL未設定）",
+      "en": "Download Link Coming Soon",
+      "zh-TW": "下載連結準備中（尚未設定網址）"
+    },
+    "passwordNoteTitle": {
+      "ja": "ダウンロード用パスワードについて",
+      "en": "About the Access Password",
+      "zh-TW": "關於下載密碼"
+    },
+    "passwordNoteBody": {
+      "ja": "共有リンク（Google Drive / OneDrive）はパスワードで保護されています。個別にお知らせしているパスワードを入力して APK ファイルを取得してください。",
+      "en": "The shared folder/file link (Google Drive / OneDrive) is password-protected. Please enter the password shared with you privately to download the APK.",
+      "zh-TW": "雲端硬碟分享連結（Google Drive / OneDrive）已設定密碼保護，請輸入另行通知您的密碼以下載 APK 檔案。"
+    },
+    "installStepsTitle": {
+      "ja": "Android 端末へのインストール手順",
+      "en": "How to Install on Android",
+      "zh-TW": "Android 裝置安裝步驟"
+    },
+    "installSteps": {
+      "ja": [
+        "上のボタンから共有リンクを開き、パスワードを入力して最新の .apk ファイルをダウンロードします。",
+        "ダウンロードした .apk ファイルをタップし、画面の案内に従って「この提供元のアプリを許可」を有効にしてインストールします。",
+        "Google Play Store での正式公開後は、ストア版への切り替えをご案内します。"
+      ],
+      "en": [
+        "Open the shared link above, enter the tester password, and download the latest .apk file.",
+        "Tap the downloaded .apk file on your Android device and allow installation from this source when prompted.",
+        "Once released on Google Play Store, we will guide you to switch to the Play Store version."
+      ],
+      "zh-TW": [
+        "點擊上方按鈕開啟雲端分享頁面，輸入測試密碼後下載最新的 .apk 檔案。",
+        "在 Android 手機上開啟下載完成的 .apk 檔案，依系統提示允許「安裝未知應用程式」即可完成安裝。",
+        "待 Google Play Store 正式上架後，將會通知您改用商店正式版。"
+      ]
+    },
+    "configHint": {
+      "ja": "※配布URLは src/data/kimagurePage.json の apkRelease.downloadUrl に貼り付けるだけで有効化されます。",
+      "en": "* Paste your Google Drive or OneDrive URL into apkRelease.downloadUrl in src/data/kimagurePage.json to activate this button.",
+      "zh-TW": "※ 只需將 Google Drive 或 OneDrive 連結填入 src/data/kimagurePage.json 的 apkRelease.downloadUrl 即可啟用按鈕。"
+    }
+  }
+}

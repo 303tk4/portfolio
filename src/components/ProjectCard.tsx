@@ -1,24 +1,33 @@
 import type { KeyboardEvent, MouseEvent } from 'react';
-import { ArrowUpRight, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, CheckCircle2 } from 'lucide-react';
 import { resolveList, resolveText, UI_TEXT } from '../i18n/translations';
 import type { Locale, Project } from '../types/project';
 import { GitHubIcon } from './BrandIcons';
 import { ProjectBadges } from './ProjectBadges';
 import { ProjectShowcaseGallery } from './ProjectShowcaseGallery';
 import { ProjectThumbnail } from './ProjectThumbnail';
+import { ProjectSubtitleNames } from './ProjectTitleBlock';
 
 interface ProjectCardProps {
   project: Project;
   locale: Locale;
   onSelect: (project: Project) => void;
+  onNavigate?: (path: string) => void;
 }
 
-export function ProjectCard({ project, locale, onSelect }: ProjectCardProps) {
+export function ProjectCard({
+  project,
+  locale,
+  onSelect,
+  onNavigate,
+}: ProjectCardProps) {
   const t = UI_TEXT[locale];
   const title = resolveText(project.title, locale);
   const tagline = resolveText(project.tagline, locale);
   const description = resolveText(project.description, locale);
   const highlights = resolveList(project.highlights, locale);
+  const detailPath = project.detailPath?.trim() ?? '';
+  const hasDetailPath = detailPath.length > 0;
   const hasDemoUrl = project.demoUrl.trim().length > 0;
   const hasGithubUrl = project.githubUrl.trim().length > 0;
   const isHero = Boolean(project.hero);
@@ -32,6 +41,15 @@ export function ProjectCard({ project, locale, onSelect }: ProjectCardProps) {
 
   const stopPropagation = (e: MouseEvent<HTMLAnchorElement>) => {
     e.stopPropagation();
+  };
+
+  const handleDetailClick = (e: MouseEvent<HTMLAnchorElement>) => {
+    e.stopPropagation();
+    if (!onNavigate || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) {
+      return;
+    }
+    e.preventDefault();
+    onNavigate(detailPath);
   };
 
   const renderTags = (marginTop: string) =>
@@ -52,14 +70,25 @@ export function ProjectCard({ project, locale, onSelect }: ProjectCardProps) {
     );
 
   const renderActions = (
+    hasDetail: boolean,
     hasDemo: boolean,
     hasGithub: boolean,
     marginTop: string,
   ) =>
-    (hasDemo || hasGithub) && (
+    (hasDetail || hasDemo || hasGithub) && (
       <div
         className={`${marginTop} flex flex-wrap items-center gap-2 border-t border-slate-100 pt-4`}
       >
+        {hasDetail && (
+          <a
+            href={detailPath}
+            onClick={handleDetailClick}
+            className="inline-flex items-center gap-1.5 rounded-lg bg-slate-900 px-3.5 py-2 text-xs font-medium text-white transition-colors hover:bg-slate-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900"
+          >
+            <span>{t.openDetailPageLabel}</span>
+            <ArrowRight className="h-3.5 w-3.5" />
+          </a>
+        )}
         {hasDemo && (
           <a
             href={project.demoUrl}
@@ -129,9 +158,12 @@ export function ProjectCard({ project, locale, onSelect }: ProjectCardProps) {
             {badges}
 
             <div className="space-y-2">
-              <h2 className="text-xl font-bold tracking-tight text-slate-900 transition-colors group-hover:text-slate-700 sm:text-2xl">
-                {title}
-              </h2>
+              <div>
+                <h2 className="text-xl font-bold tracking-tight text-slate-900 transition-colors group-hover:text-slate-700 sm:text-2xl">
+                  {title}
+                </h2>
+                <ProjectSubtitleNames names={project.subtitleNames} />
+              </div>
               <p className="text-sm font-medium leading-relaxed text-slate-700 sm:text-base">
                 {tagline}
               </p>
@@ -158,7 +190,7 @@ export function ProjectCard({ project, locale, onSelect }: ProjectCardProps) {
 
           <div>
             {renderTags('mt-5')}
-            {renderActions(hasDemoUrl, hasGithubUrl, 'mt-5')}
+            {renderActions(hasDetailPath, hasDemoUrl, hasGithubUrl, 'mt-5')}
           </div>
         </div>
       </article>
@@ -187,16 +219,19 @@ export function ProjectCard({ project, locale, onSelect }: ProjectCardProps) {
         <div className="mb-3">{badges}</div>
 
         <div className="flex-1 space-y-2">
-          <h2 className="text-lg font-semibold tracking-tight text-slate-900 transition-colors group-hover:text-slate-700">
-            {title}
-          </h2>
+          <div>
+            <h2 className="text-lg font-semibold tracking-tight text-slate-900 transition-colors group-hover:text-slate-700">
+              {title}
+            </h2>
+            <ProjectSubtitleNames names={project.subtitleNames} />
+          </div>
           <p className="line-clamp-2 text-sm leading-relaxed text-slate-600">
             {tagline}
           </p>
         </div>
 
         {renderTags('mt-4')}
-        {renderActions(hasDemoUrl, hasGithubUrl, 'mt-5')}
+        {renderActions(hasDetailPath, hasDemoUrl, hasGithubUrl, 'mt-5')}
       </div>
     </article>
   );

@@ -1,3 +1,4 @@
+import type { MouseEvent } from 'react';
 import { Globe, Terminal } from 'lucide-react';
 import { LOCALE_OPTIONS, resolveText, UI_TEXT } from '../i18n/translations';
 import type { Locale, SiteProfile } from '../types/project';
@@ -7,29 +8,47 @@ interface HeaderProps {
   profile: SiteProfile;
   locale: Locale;
   onChangeLocale: (locale: Locale) => void;
+  onNavigate?: (path: string) => void;
 }
 
-export function Header({ profile, locale, onChangeLocale }: HeaderProps) {
+export function Header({
+  profile,
+  locale,
+  onChangeLocale,
+  onNavigate,
+}: HeaderProps) {
   const t = UI_TEXT[locale];
   const siteName = resolveText(profile.name, locale);
   const role = resolveText(profile.role, locale);
   const bio = resolveText(profile.bio, locale);
+
+  const handleHomeClick = (e: MouseEvent<HTMLAnchorElement>) => {
+    if (!onNavigate || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) {
+      return;
+    }
+    e.preventDefault();
+    onNavigate('/');
+  };
 
   return (
     <header className="border-b border-slate-200/80 bg-white">
       <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
         <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
           <div className="max-w-2xl space-y-3">
-            <div className="inline-flex items-center gap-2.5">
+            <a
+              href="/"
+              onClick={handleHomeClick}
+              className="inline-flex items-center gap-2.5 rounded-xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-slate-900"
+            >
               <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-slate-900 text-white shadow-xs">
                 <Terminal className="h-4.5 w-4.5" />
               </span>
               <div>
-                <h1 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
+                <h1 className="text-2xl font-bold tracking-tight text-slate-900 transition-colors hover:text-slate-700 sm:text-3xl">
                   {siteName}
                 </h1>
               </div>
-            </div>
+            </a>
             <p className="text-xs font-medium tracking-wider text-slate-500 uppercase">
               {role}
             </p>

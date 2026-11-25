@@ -1,19 +1,27 @@
 import { useEffect } from 'react';
-import { ArrowUpRight, CheckCircle2, X } from 'lucide-react';
+import type { MouseEvent } from 'react';
+import { ArrowRight, ArrowUpRight, CheckCircle2, X } from 'lucide-react';
 import { resolveList, resolveText, UI_TEXT } from '../i18n/translations';
 import type { Locale, Project } from '../types/project';
 import { GitHubIcon } from './BrandIcons';
 import { ProjectBadges } from './ProjectBadges';
 import { ProjectShowcaseGallery } from './ProjectShowcaseGallery';
 import { ProjectThumbnail } from './ProjectThumbnail';
+import { ProjectSubtitleNames } from './ProjectTitleBlock';
 
 interface ProjectModalProps {
   project: Project | null;
   locale: Locale;
   onClose: () => void;
+  onNavigate?: (path: string) => void;
 }
 
-export function ProjectModal({ project, locale, onClose }: ProjectModalProps) {
+export function ProjectModal({
+  project,
+  locale,
+  onClose,
+  onNavigate,
+}: ProjectModalProps) {
   useEffect(() => {
     if (!project) {
       return;
@@ -44,8 +52,19 @@ export function ProjectModal({ project, locale, onClose }: ProjectModalProps) {
   const tagline = resolveText(project.tagline, locale);
   const description = resolveText(project.description, locale);
   const highlights = resolveList(project.highlights, locale);
+  const detailPath = project.detailPath?.trim() ?? '';
+  const hasDetailPath = detailPath.length > 0;
   const hasDemoUrl = project.demoUrl.trim().length > 0;
   const hasGithubUrl = project.githubUrl.trim().length > 0;
+
+  const handleDetailClick = (e: MouseEvent<HTMLAnchorElement>) => {
+    if (!onNavigate || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) {
+      return;
+    }
+    e.preventDefault();
+    onClose();
+    onNavigate(detailPath);
+  };
 
   return (
     <div
@@ -103,7 +122,8 @@ export function ProjectModal({ project, locale, onClose }: ProjectModalProps) {
               >
                 {title}
               </h2>
-              <p className="mt-1 text-sm font-medium text-slate-500 sm:text-base">
+              <ProjectSubtitleNames names={project.subtitleNames} />
+              <p className="mt-2.5 text-sm font-medium text-slate-700 sm:text-base">
                 {tagline}
               </p>
             </div>
@@ -155,8 +175,18 @@ export function ProjectModal({ project, locale, onClose }: ProjectModalProps) {
             </section>
           )}
 
-          {(hasDemoUrl || hasGithubUrl) && (
+          {(hasDetailPath || hasDemoUrl || hasGithubUrl) && (
             <div className="flex flex-wrap items-center gap-3 border-t border-slate-100 pt-5">
+              {hasDetailPath && (
+                <a
+                  href={detailPath}
+                  onClick={handleDetailClick}
+                  className="inline-flex items-center gap-2 rounded-xl bg-slate-900 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-slate-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900"
+                >
+                  <span>{t.openDetailPageLabel}</span>
+                  <ArrowRight className="h-4 w-4" />
+                </a>
+              )}
               {hasDemoUrl && (
                 <a
                   href={project.demoUrl}

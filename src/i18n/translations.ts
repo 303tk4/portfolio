@@ -78,6 +78,8 @@ export interface UiTranslations {
   noMatchingProjects: string;
   featuredLabel: string;
   openAppLabel: string;
+  openDetailPageLabel: string;
+  backToPortfolioLabel: string;
   githubLabel: string;
   viewDetailsPrefix: string;
   screenshotAltSuffix: string;
@@ -104,6 +106,8 @@ export const UI_TEXT: Record<Locale, UiTranslations> = {
     noMatchingProjects: '該当するタグの作品が見つかりませんでした。',
     featuredLabel: 'Featured',
     openAppLabel: 'アプリを開く',
+    openDetailPageLabel: '紹介ページを見る',
+    backToPortfolioLabel: 'Studio 303 トップへ戻る',
     githubLabel: 'GitHub',
     viewDetailsPrefix: 'の詳細を表示',
     screenshotAltSuffix: 'のスクリーンショット',
@@ -134,6 +138,8 @@ export const UI_TEXT: Record<Locale, UiTranslations> = {
     noMatchingProjects: 'No projects matched the selected tag.',
     featuredLabel: 'Featured',
     openAppLabel: 'Open App',
+    openDetailPageLabel: 'View App Page',
+    backToPortfolioLabel: 'Back to Studio 303',
     githubLabel: 'GitHub',
     viewDetailsPrefix: ' — view details',
     screenshotAltSuffix: ' screenshot',
@@ -164,6 +170,8 @@ export const UI_TEXT: Record<Locale, UiTranslations> = {
     noMatchingProjects: '找不到符合所選標籤的作品。',
     featuredLabel: 'Featured',
     openAppLabel: '開啟應用',
+    openDetailPageLabel: '查看專屬介紹頁',
+    backToPortfolioLabel: '返回 Studio 303 首頁',
     githubLabel: 'GitHub',
     viewDetailsPrefix: ' 的詳細資訊',
     screenshotAltSuffix: ' 畫面截圖',
