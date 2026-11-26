@@ -114,7 +114,7 @@ export const UI_TEXT: Record<Locale, UiTranslations> = {
     modalPreviewAltSuffix: 'のプレビュー',
     closeModalLabel: 'モーダルを閉じる',
     overviewHeading: '概要',
-    highlightsHeading: '工夫した点・特徴',
+    highlightsHeading: '特徴',
     techStackHeading: '技術スタック',
     supportedLanguagesLabel: '対応言語',
     previewUnavailableLabel: 'Preview Unavailable',

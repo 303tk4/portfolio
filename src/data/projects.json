@@ -7,14 +7,14 @@
       "Kimagure 有聲書與 Podcast 播放器"
     ],
     "tagline": {
-      "ja": "最大6個の再生デッキから、聴き途中のオーディオブックやポッドキャスト再生リストを、いつでも1タップで即再生できるマルチデッキ・プレイヤー。",
-      "en": "A one-of-a-kind multi-deck Android player that lets you resume up to 6 in-progress audiobooks and podcast playlists with a single tap.",
-      "zh-TW": "獨一無二的多卡座 Android 播放器——從最多 6 個播放面板中，隨時單鍵即時續播聆聽中的有聲書與 Podcast 播放清單。"
+      "ja": "まるで6個のプレイヤーがひとつの画面に。聴き途中のオーディオブックやポッドキャストを、いつでも1タップで即再生。",
+      "en": "Like having six players on one screen. Resume any in-progress audiobook or podcast with a single tap.",
+      "zh-TW": "彷彿將六台播放器集中在同一畫面。聆聽中的有聲書與 Podcast，隨時單鍵即時續播。"
     },
     "description": {
-      "ja": "何時間も続けて1冊のオーディオブックだけを聴き切るのは簡単ではありません。気分を変えて別の本やポッドキャストを聴き、また元の本に戻りたくなったとき、一般的なプレイヤーでは本棚に戻って探し直す手間がかかります。Kimagure Book & Podcast Player は、最大6個の再生デッキに聴き途中のオーディオブックやポッドキャスト再生リストを常駐させ、いつでもワンタップで切り替えて続きから即再生できる、ほかに例を見ない便利すぎるプレイヤーです。開発はほぼ完了しており、Google Play Store への公開を予定しています。",
-      "en": "Few listeners stay locked into a single audiobook for hours on end. When you want to switch to another title or a podcast—and jump back later—traditional players force tedious trips back to the library. Kimagure Book & Podcast Player keeps up to six in-progress audiobooks and podcast playlists ready on a 6-tile Now Reading deck so you can switch and resume any of them with a single tap. Development is nearly complete, with a Google Play Store release planned.",
-      "zh-TW": "很少人能連續數小時只聽同一本有聲書。想轉換心情改聽另一本書或 Podcast、過一陣子又想切回來時，傳統播放器總要退回書庫重新尋找。Kimagure Book & Podcast Player 可將最多 6 組聆聽中的有聲書與 Podcast 播放清單常駐於首頁的 6 格面板，隨時單鍵點擊即可從上次中斷處即時續播。目前已接近開發完成，預定上架 Google Play Store。"
+      "ja": "通勤中、散歩中、家事の途中。オーディオブックやポッドキャストは、たいてい最後まで聴く前に中断していませんか。\n気まぐれプレイヤーなら、最大６つデッキで別々の本やポッドキャストを再生します。小説、ニュース、ビジネスなど、気分次第で聴きたいものが変わっても、いつでもワンタップで以前聴いたところから再開できます。自分の録音データなどの音源や、インターネットラジオ（開発中）にも対応。\n（Google Play Store近日公開予定）",
+      "en": "On your commute, out for a walk, or doing chores around the house—most audiobooks and podcasts get paused long before they finish.\nWith Kimagure Book & Podcast Player, up to six decks keep separate books and podcasts ready at once. Whether you feel like fiction, news, or business, you can resume right where you left off with a single tap. Also supports your own audio recordings and internet radio (in development).\n(Coming soon to Google Play Store)",
+      "zh-TW": "通勤時、散步時、做家事的空檔。有聲書與 Podcast 往往還沒聽完就得先暫停。\n隨興播放器讓您透過最多 6 個播放面板同時切換不同的書籍與 Podcast。無論想聽小說、新聞還是商業書籍，都能依心情隨時單鍵從上次中斷處接續播放。亦支援個人錄音等音訊檔，並計畫支援網路廣播（開發中）。\n（預定近期上架 Google Play Store）"
     },
     "highlights": {
       "ja": [

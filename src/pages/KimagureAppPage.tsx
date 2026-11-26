@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import type { MouseEvent } from 'react';
 import {
   ArrowLeft,
@@ -10,6 +11,8 @@ import {
   Play,
   ShieldCheck,
   Smartphone,
+  X,
+  ZoomIn,
 } from 'lucide-react';
 import { ProjectBadges } from '../components/ProjectBadges';
 import { ProjectShowcaseGallery } from '../components/ProjectShowcaseGallery';
@@ -30,6 +33,7 @@ interface KimagurePageConfig {
     aspect: string;
     sectionTitle: LocalizedString;
     sectionSubtitle: LocalizedString;
+    additionalNote?: LocalizedString;
     placeholderTitle: LocalizedString;
     placeholderDescription: LocalizedString;
     highlights: LocalizedStringArray;
@@ -52,6 +56,13 @@ interface KimagurePageConfig {
     passwordNoteBody: LocalizedString;
     installStepsTitle: LocalizedString;
     installSteps: LocalizedStringArray;
+    installExamples: {
+      title: LocalizedString;
+      items: Array<{
+        src: string;
+        label: LocalizedString;
+      }>;
+    };
     configHint: LocalizedString;
   };
 }
@@ -64,13 +75,37 @@ interface KimagureAppPageProps {
   onNavigate: (path: string) => void;
 }
 
-function isEmbedUrl(url: string): boolean {
-  return (
-    url.includes('youtube.com/embed') ||
-    url.includes('youtube-nocookie.com/embed') ||
-    url.includes('player.vimeo.com') ||
-    url.includes('/preview')
-  );
+function getEmbedUrl(url: string): string | null {
+  try {
+    const parsed = new URL(url, 'https://example.com');
+    const host = parsed.hostname.replace(/^www\./, '');
+
+    if (host === 'youtu.be') {
+      const id = parsed.pathname.slice(1).split('/')[0];
+      return id ? `https://www.youtube.com/embed/${id}` : null;
+    }
+
+    if (host === 'youtube.com' || host === 'youtube-nocookie.com') {
+      if (parsed.pathname.startsWith('/embed/')) {
+        return url;
+      }
+      if (parsed.pathname === '/watch') {
+        const id = parsed.searchParams.get('v');
+        return id ? `https://www.youtube.com/embed/${id}` : null;
+      }
+      if (parsed.pathname.startsWith('/shorts/')) {
+        const id = parsed.pathname.split('/')[2];
+        return id ? `https://www.youtube.com/embed/${id}` : null;
+      }
+    }
+
+    if (host === 'player.vimeo.com' || url.includes('/preview')) {
+      return url;
+    }
+  } catch {
+    // Fall back to direct <video> tag
+  }
+  return null;
 }
 
 export function KimagureAppPage({
@@ -85,11 +120,41 @@ export function KimagureAppPage({
   const highlights = resolveList(project.highlights, locale);
 
   const videoUrl = pageConfig.video.url.trim();
+  const embedVideoUrl = videoUrl ? getEmbedUrl(videoUrl) : null;
+  const videoSubtitle = resolveText(pageConfig.video.sectionSubtitle, locale).trim();
+  const videoAdditionalNote = pageConfig.video.additionalNote
+    ? resolveText(pageConfig.video.additionalNote, locale).trim()
+    : '';
   const isPortraitVideo = pageConfig.video.aspect !== 'landscape';
   const videoHighlights = resolveList(pageConfig.video.highlights, locale);
 
   const apkUrl = pageConfig.apkRelease.downloadUrl.trim();
   const installSteps = resolveList(pageConfig.apkRelease.installSteps, locale);
+  const [selectedExample, setSelectedExample] = useState<{
+    src: string;
+    label: string;
+  } | null>(null);
+
+  useEffect(() => {
+    if (!selectedExample) {
+      return;
+    }
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setSelectedExample(null);
+      }
+    };
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [selectedExample]);
 
   const handleBackClick = (e: MouseEvent<HTMLAnchorElement>) => {
     if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) {
@@ -138,7 +203,7 @@ export function KimagureAppPage({
                 <p className="text-base font-medium leading-relaxed text-slate-700">
                   {tagline}
                 </p>
-                <p className="text-sm leading-relaxed text-slate-600 sm:text-base">
+                <p className="whitespace-pre-line text-sm leading-relaxed text-slate-600 sm:text-base">
                   {description}
                 </p>
               </div>
@@ -211,9 +276,11 @@ export function KimagureAppPage({
               >
                 {resolveText(pageConfig.video.sectionTitle, locale)}
               </h3>
-              <p className="text-sm leading-relaxed text-slate-600 sm:text-base">
-                {resolveText(pageConfig.video.sectionSubtitle, locale)}
-              </p>
+              {videoSubtitle && (
+                <p className="text-sm leading-relaxed text-slate-600 sm:text-base">
+                  {videoSubtitle}
+                </p>
+              )}
             </div>
 
             {videoHighlights.length > 0 && (
@@ -229,6 +296,12 @@ export function KimagureAppPage({
                 ))}
               </ul>
             )}
+
+            {videoAdditionalNote && (
+              <p className="rounded-xl border border-slate-200/80 bg-slate-50/70 p-4 text-sm leading-relaxed text-slate-700">
+                {videoAdditionalNote}
+              </p>
+            )}
           </div>
 
           <div className="flex justify-center lg:col-span-6">
@@ -238,9 +311,9 @@ export function KimagureAppPage({
               }`}
             >
               {videoUrl ? (
-                isEmbedUrl(videoUrl) ? (
+                embedVideoUrl ? (
                   <iframe
-                    src={videoUrl}
+                    src={embedVideoUrl}
                     title={resolveText(pageConfig.video.sectionTitle, locale)}
                     className="h-full w-full border-0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -322,51 +395,6 @@ export function KimagureAppPage({
               </figure>
             );
           })}
-        </div>
-      </section>
-
-      {/* Highlights & Technical Architecture */}
-      <section
-        aria-labelledby="highlights-section-heading"
-        className="rounded-2xl border border-slate-200 bg-white p-6 sm:p-8"
-      >
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
-          <div className="space-y-4 lg:col-span-8">
-            <h3
-              id="highlights-section-heading"
-              className="text-lg font-semibold tracking-tight text-slate-900"
-            >
-              {t.highlightsHeading}
-            </h3>
-            <ul className="space-y-3">
-              {highlights.map((item) => (
-                <li
-                  key={item}
-                  className="flex items-start gap-2.5 text-sm leading-relaxed text-slate-700 sm:text-base"
-                >
-                  <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-slate-500" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="space-y-4 rounded-xl border border-slate-200/80 bg-slate-50/70 p-5 lg:col-span-4">
-            <div className="flex items-center gap-2 text-xs font-semibold tracking-wider text-slate-500 uppercase">
-              <Cpu className="h-4 w-4" />
-              <span>{t.techStackHeading}</span>
-            </div>
-            <ul className="flex flex-wrap gap-2">
-              {project.tags.map((tag) => (
-                <li
-                  key={tag}
-                  className="rounded-lg border border-slate-200 bg-white px-3 py-1.5 font-mono text-xs font-medium text-slate-700"
-                >
-                  {tag}
-                </li>
-              ))}
-            </ul>
-          </div>
         </div>
       </section>
 
@@ -458,6 +486,45 @@ export function KimagureAppPage({
                   </li>
                 ))}
               </ol>
+
+              <div className="border-t border-slate-100 pt-3">
+                <p className="mb-2 text-xs font-semibold text-slate-700">
+                  {resolveText(pageConfig.apkRelease.installExamples.title, locale)}
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  {pageConfig.apkRelease.installExamples.items.map((example) => {
+                    const exampleLabel = resolveText(example.label, locale);
+                    return (
+                      <button
+                        key={example.src}
+                        type="button"
+                        onClick={() =>
+                          setSelectedExample({
+                            src: example.src,
+                            label: exampleLabel,
+                          })
+                        }
+                        className="group/thumb flex cursor-pointer items-center gap-2.5 rounded-xl border border-slate-200 bg-slate-50/80 p-2 text-left transition-colors hover:border-indigo-300 hover:bg-indigo-50/50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                      >
+                        <div className="relative w-12 shrink-0 overflow-hidden rounded-lg bg-slate-950 ring-1 ring-slate-900/15">
+                          <img
+                            src={example.src}
+                            alt={exampleLabel}
+                            loading="lazy"
+                            className="block h-auto w-full object-cover"
+                          />
+                          <span className="absolute right-1 bottom-1 inline-flex h-4 w-4 items-center justify-center rounded-full bg-slate-900/80 text-white opacity-90 transition-transform group-hover/thumb:scale-110">
+                            <ZoomIn className="h-2.5 w-2.5" />
+                          </span>
+                        </div>
+                        <span className="max-w-[130px] text-[11px] font-medium leading-snug text-slate-700 group-hover/thumb:text-indigo-700">
+                          {exampleLabel}
+                        </span>
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
             </div>
           </div>
 
@@ -466,6 +533,51 @@ export function KimagureAppPage({
               {resolveText(pageConfig.apkRelease.configHint, locale)}
             </p>
           )}
+        </div>
+      </section>
+
+      {/* Highlights & Technical Architecture */}
+      <section
+        aria-labelledby="highlights-section-heading"
+        className="rounded-2xl border border-slate-200 bg-white p-6 sm:p-8"
+      >
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
+          <div className="space-y-4 lg:col-span-8">
+            <h3
+              id="highlights-section-heading"
+              className="text-lg font-semibold tracking-tight text-slate-900"
+            >
+              {t.highlightsHeading}
+            </h3>
+            <ul className="space-y-3">
+              {highlights.map((item) => (
+                <li
+                  key={item}
+                  className="flex items-start gap-2.5 text-sm leading-relaxed text-slate-700 sm:text-base"
+                >
+                  <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-slate-500" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="space-y-4 rounded-xl border border-slate-200/80 bg-slate-50/70 p-5 lg:col-span-4">
+            <div className="flex items-center gap-2 text-xs font-semibold tracking-wider text-slate-500 uppercase">
+              <Cpu className="h-4 w-4" />
+              <span>{t.techStackHeading}</span>
+            </div>
+            <ul className="flex flex-wrap gap-2">
+              {project.tags.map((tag) => (
+                <li
+                  key={tag}
+                  className="rounded-lg border border-slate-200 bg-white px-3 py-1.5 font-mono text-xs font-medium text-slate-700"
+                >
+                  {tag}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
 
@@ -500,6 +612,42 @@ export function KimagureAppPage({
           <ExternalLink className="h-4 w-4" />
         </a>
       </section>
+
+      {selectedExample && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label={selectedExample.label}
+          onClick={(e) => {
+            if (e.target === e.currentTarget) {
+              setSelectedExample(null);
+            }
+          }}
+          className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/70 p-4 backdrop-blur-xs"
+        >
+          <div className="relative flex max-h-[90vh] w-full max-w-xs flex-col items-center rounded-2xl border border-slate-200 bg-white p-4 shadow-2xl">
+            <button
+              type="button"
+              onClick={() => setSelectedExample(null)}
+              aria-label={t.closeModalLabel}
+              className="absolute top-3 right-3 z-10 inline-flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-xs transition-colors hover:bg-slate-100 hover:text-slate-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900"
+            >
+              <X className="h-4 w-4" />
+            </button>
+
+            <p className="mb-3 pr-8 text-center text-xs font-semibold text-slate-900 sm:text-sm">
+              {selectedExample.label}
+            </p>
+            <div className="overflow-hidden rounded-xl bg-slate-950 ring-1 ring-slate-900/15">
+              <img
+                src={selectedExample.src}
+                alt={selectedExample.label}
+                className="max-h-[72vh] w-auto object-contain"
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

@@ -1,16 +1,17 @@
 {
   "video": {
-    "url": "",
+    "url": "/videos/kimagure-demo.mp4",
     "aspect": "portrait",
     "sectionTitle": {
       "ja": "デモ動画",
       "en": "Demo Video",
       "zh-TW": "操作示範影片"
     },
-    "sectionSubtitle": {
-      "ja": "6つの再生デッキを切り替えて即再生する実際の操作イメージです。",
-      "en": "Watch how the 6-deck player switches between audiobooks and podcasts in one tap.",
-      "zh-TW": "實際操作示範：單鍵切換 6 個播放面板並即時續播有聲書與 Podcast。"
+    "sectionSubtitle": "",
+    "additionalNote": {
+      "ja": "独自機能を充実させるだけでなく、お気に入りの保存、多彩な条件で並び替えなど、オーディオブックやポッドキャストの愛好家が求める機能を押さえています。",
+      "en": "Beyond its signature multi-deck playback, it covers the essentials audiobook and podcast enthusiasts expect—including saving favorites and flexible sorting across multiple criteria.",
+      "zh-TW": "除了強化獨特的多面板機能外，也具備收藏最愛、多條件排序等有聲書與 Podcast 愛好者必備的實用功能。"
     },
     "placeholderTitle": {
       "ja": "ショートデモ動画（挿入予定）",
@@ -122,9 +123,9 @@
       "en": "Password-Protected Share",
       "zh-TW": "設有密碼保護之分享連結"
     },
-    "providerLabel": "Google Drive / OneDrive",
+    "providerLabel": "OneDrive",
     "versionLabel": "Android APK（Tester Build）",
-    "downloadUrl": "",
+    "downloadUrl": "https://1drv.ms/f/c/0067fbeb5a555aba/IgAvn_-wcbDtTI6FL64h9J8fARPRN_nLZPuwNTlBdPB7gc4?e=uAaCwt",
     "buttonLabel": {
       "ja": "APK ダウンロードページを開く",
       "en": "Open APK Download Link",
@@ -141,9 +142,9 @@
       "zh-TW": "關於下載密碼"
     },
     "passwordNoteBody": {
-      "ja": "共有リンク（Google Drive / OneDrive）はパスワードで保護されています。個別にお知らせしているパスワードを入力して APK ファイルを取得してください。",
-      "en": "The shared folder/file link (Google Drive / OneDrive) is password-protected. Please enter the password shared with you privately to download the APK.",
-      "zh-TW": "雲端硬碟分享連結（Google Drive / OneDrive）已設定密碼保護，請輸入另行通知您的密碼以下載 APK 檔案。"
+      "ja": "共有リンク（OneDrive）はパスワードで保護されています。個別にお知らせしているパスワードを入力して APK ファイルを取得してください。",
+      "en": "The shared OneDrive folder link is password-protected. Please enter the password shared with you privately to download the APK.",
+      "zh-TW": "OneDrive 分享資料夾已設定密碼保護，請輸入另行通知您的密碼以下載 APK 檔案。"
     },
     "installStepsTitle": {
       "ja": "Android 端末へのインストール手順",
@@ -154,17 +155,45 @@
       "ja": [
         "上のボタンから共有リンクを開き、パスワードを入力して最新の .apk ファイルをダウンロードします。",
         "ダウンロードした .apk ファイルをタップし、画面の案内に従って「この提供元のアプリを許可」を有効にしてインストールします。",
+        "インストール時に警告が出てスキャンが始まりますが、異常ではなく、Play Store以外からアプリを導入するときの正常な動作です。確認完了後に「Install（インストール）」をタップしてください。",
         "Google Play Store での正式公開後は、ストア版への切り替えをご案内します。"
       ],
       "en": [
-        "Open the shared link above, enter the tester password, and download the latest .apk file.",
+        "Open the shared OneDrive link above, enter the tester password, and download the latest .apk file.",
         "Tap the downloaded .apk file on your Android device and allow installation from this source when prompted.",
+        "A warning and Google Play Protect scan will start—this is not an error, but normal behavior when installing an app outside the Play Store. Once complete, tap \"Install\".",
         "Once released on Google Play Store, we will guide you to switch to the Play Store version."
       ],
       "zh-TW": [
-        "點擊上方按鈕開啟雲端分享頁面，輸入測試密碼後下載最新的 .apk 檔案。",
-        "在 Android 手機上開啟下載完成的 .apk 檔案，依系統提示允許「安裝未知應用程式」即可完成安裝。",
+        "點擊上方按鈕開啟 OneDrive 分享頁面，輸入測試密碼後下載最新的 .apk 檔案。",
+        "在 Android 手機上開啟下載完成的 .apk 檔案，依系統提示允許「安裝未知應用程式」即可繼續。",
+        "安裝過程中會出現警告並開始進行掃描，這並非異常，而是從 Play Store 以外來源安裝應用程式時的正常安全檢查。掃描完成後請點擊「Install（安裝）」。",
         "待 Google Play Store 正式上架後，將會通知您改用商店正式版。"
+      ]
+    },
+    "installExamples": {
+      "title": {
+        "ja": "画面例（クリックで拡大）",
+        "en": "Screen Examples (Click to enlarge)",
+        "zh-TW": "畫面範例（點擊放大）"
+      },
+      "items": [
+        {
+          "src": "/images/apk-install-scan.jpg",
+          "label": {
+            "ja": "1. Play Protect スキャン中",
+            "en": "1. Play Protect Scanning",
+            "zh-TW": "1. Play Protect 掃描中"
+          }
+        },
+        {
+          "src": "/images/apk-install-safe.jpg",
+          "label": {
+            "ja": "2. 安全確認後「Install」をタップ",
+            "en": "2. Tap \"Install\"",
+            "zh-TW": "2. 安全確認後點擊「Install」"
+          }
+        }
       ]
     },
     "configHint": {

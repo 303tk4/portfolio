@@ -169,7 +169,7 @@ export function ProjectCard({
               </p>
             </div>
 
-            <p className="text-sm leading-relaxed text-slate-600">
+            <p className="whitespace-pre-line text-sm leading-relaxed text-slate-600">
               {description}
             </p>
 

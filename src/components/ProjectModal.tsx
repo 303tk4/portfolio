@@ -133,7 +133,7 @@ export function ProjectModal({
             <h3 className="text-xs font-semibold tracking-wider text-slate-400 uppercase">
               {t.overviewHeading}
             </h3>
-            <p className="text-sm leading-relaxed text-slate-700 sm:text-base">
+            <p className="whitespace-pre-line text-sm leading-relaxed text-slate-700 sm:text-base">
               {description}
             </p>
           </section>
