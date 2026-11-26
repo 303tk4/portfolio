@@ -67,29 +67,29 @@
         }
       },
       {
-        "src": "/images/kimagure-player-1.png",
-        "label": {
-          "ja": "全画面プレイヤー（エピソード管理）",
-          "en": "Full-Screen Player (Episodes)",
-          "zh-TW": "全螢幕播放器（章節／單集管理）"
-        },
-        "caption": {
-          "ja": "速度変更、音量ブースト、スリープタイマー、スキップボタンを押しやすく配置。",
-          "en": "Quick-access controls for speed, volume boost, sleep timer, and custom skip intervals.",
-          "zh-TW": "直覺配置倍速調整、音量增強、睡眠定時與快轉／倒轉按鍵。"
-        }
-      },
-      {
-        "src": "/images/kimagure-player-2.png",
+        "src": "/images/kimagure-player-podcast.jpg",
         "label": {
           "ja": "全画面プレイヤー（ポッドキャスト）",
           "en": "Full-Screen Player (Podcasts)",
           "zh-TW": "全螢幕播放器（Podcast 模式）"
         },
         "caption": {
-          "ja": "作品カラーに合わせたダイナミックな配色で、聴いている番組をひと目で識別。",
-          "en": "Artwork-tinted player theme adapts to each deck so every title feels distinct.",
-          "zh-TW": "依封面主色動態呈現介面色彩，一眼辨識目前播放的節目內容。"
+          "ja": "プレイリスト管理、エピソード詳細、速度・音量設定、スキップボタンを押しやすく配置。",
+          "en": "Quick-access controls for playlist episodes, speed, volume boost, sleep timer, and custom skips.",
+          "zh-TW": "直覺配置單集清單、倍速調整、音量增強、睡眠定時與快轉／倒轉按鍵。"
+        }
+      },
+      {
+        "src": "/images/kimagure-player-audiobook.jpg",
+        "label": {
+          "ja": "全画面プレイヤー（オーディオブック）",
+          "en": "Full-Screen Player (Audiobooks)",
+          "zh-TW": "全螢幕播放器（有聲書模式）"
+        },
+        "caption": {
+          "ja": "チャプター切り替えやタイムスタンプ付きメモ（+ Note）機能を備え、作品カラーに合わせた配色で表示。",
+          "en": "Includes chapter navigation and timestamped notes (+ Note), styled with an artwork-tinted theme.",
+          "zh-TW": "具備章節切換與時間戳記筆記（+ Note）功能，並依封面主色呈現專屬介面配色。"
         }
       },
       {
