@@ -66,9 +66,9 @@
       "zh-TW": "針對您選擇的業種，在 Google Maps 上選定任意地點，即時分析當地需求、競品分布與開店潛力。"
     },
     "description": {
-      "ja": "Googleマップ上で任意の場所を選び、その場所の、その業種の有望度を分析します。類似の市場文分析は、主に企業向け(BtoB)の高額かつ閉じられたサービスが中心です。しかし、個人や小規模事業者が手軽にその地域の有望度を調べたいレベルであれば、そのような必要はありません。アルゴリズムとAIが、既存店の商圏とレビュースコア・駅乗降客数などの人口動態・用途地域などから判定します。",
-      "en": "Pick any location on Google Maps to evaluate business viability for your target industry. Traditional trade-area analytics are locked behind expensive enterprise B2B suites, which is overkill for solo founders and small businesses doing quick site validation. Algorithms and AI combine existing competitor catchments, review scores, station ridership, population meshes, and zoning data into an accessible score.",
-      "zh-TW": "在 Google 地圖上選擇任意地點，即可評估該區域針對特定業種的開店潛力。傳統商圈分析多為高價封閉的企業級（B2B）服務，但對於想快速評估選址潛力的個人或小型創業者而言並不需要如此複雜。透過演算法與 AI，結合既有店家商圈、評論分數、車站進出人次、網格人口動態與土地使用分區等指標進行綜合判定。"
+      "ja": "実験的なアプリです。実用上は参考程度にとどめてください。\nGoogleマップ上で任意の場所を選び、その場所の、その業種の有望度を分析します。類似の市場文分析は、主に企業向け(BtoB)の高額かつ閉じられたサービスが中心です。しかし、個人や小規模事業者が手軽にその地域の有望度を調べたいレベルであれば、そのような必要はありません。アルゴリズムとAIが、既存店の商圏とレビュースコア・駅乗降客数などの人口動態・用途地域などから判定します。",
+      "en": "This is an experimental app—please treat the results as reference only.\nPick any location on Google Maps to evaluate business viability for your target industry. Traditional trade-area analytics are locked behind expensive enterprise B2B suites, which is overkill for solo founders and small businesses doing quick site validation. Algorithms and AI combine existing competitor catchments, review scores, station ridership, population meshes, and zoning data into an accessible score.",
+      "zh-TW": "此為實驗性應用程式，實際評估時請僅供參考。\n在 Google 地圖上選擇任意地點，即可評估該區域針對特定業種的開店潛力。傳統商圈分析多為高價封閉的企業級（B2B）服務，但對於想快速評估選址潛力的個人或小型創業者而言並不需要如此複雜。透過演算法與 AI，結合既有店家商圈、評論分數、車站進出人次、網格人口動態與土地使用分區等指標進行綜合判定。"
     },
     "highlights": {
       "ja": [
